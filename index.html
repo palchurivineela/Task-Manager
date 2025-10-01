@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task Manager with Progress Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>TaskCraft</h2>
+      <button id="themeToggle">🌙</button>
+    </div>
+
+    <div class="task-input">
+      <input type="text" id="taskInput" placeholder="Enter new task...">
+      <button id="addTaskBtn">Add</button>
+    </div>
+
+    <div class="progress">
+      <div class="progress-bar">
+        <div class="progress-bar-fill"></div>
+      </div>
+      <div class="progress-text">0% completed</div>
+    </div>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <!-- Congratulations Popup -->
+  <div id="congratsPopup" class="popup hidden">
+    🎉 Congratulations! All tasks completed! 🎉
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+body {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  width: 420px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h2 {
+  color: #333;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Task input */
+.task-input {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.task-input button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.task-input button:hover {
+  background: #43a047;
+}
+
+/* Progress bar */
+.progress {
+  margin: 20px 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-text {
+  text-align: right;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Task list */
+ul {
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafafa;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  transition: transform 0.2s;
+}
+
+li:hover {
+  transform: scale(1.02);
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.actions button {
+  margin-left: 5px;
+  padding: 5px 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 12px;
+}
+
+.complete-btn { background: #2196f3; color: white; }
+.edit-btn { background: #ffc107; color: white; }
+.delete-btn { background: #f44336; color: white; }
+
+.actions button:hover {
+  opacity: 0.85;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: #333;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  font-size: 18px;
+  z-index: 999;
+  animation: popUp 0.5s ease;
+}
+
+@keyframes popUp {
+  from { transform: translateX(-50%) scale(0.7); opacity: 0; }
+  to { transform: translateX(-50%) scale(1); opacity: 1; }
+}
+
+.hidden {
+  display: none;
+}
+
+/* Dark mode */
+body.dark {
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+}
+
+body.dark .container {
+  background: rgba(30, 30, 30, 0.9);
+  color: white;
+}
+
+body.dark h2,
+body.dark .progress-text {
+  color: white;
+}
+
+body.dark li {
+  background: #444;
+  border: 1px solid #666;
+}
+
+body.dark li.completed span {
+  color: #aaa;
+}
+
+/* Confetti style */
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  z-index: 1000;
+  opacity: 0.9;
+  pointer-events: none;
+}
